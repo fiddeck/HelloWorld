@@ -48,6 +48,16 @@ int WINAPI WinMain(
         exeDir = exeDir.substr(0, exeDir.find_last_of("\\/"));
         std::string fullVideoPath = exeDir + "\\main.mp4";
 
+        // 检查文件是否存在
+        DWORD fileAttributes = GetFileAttributesA(fullVideoPath.c_str());
+        if (fileAttributes == INVALID_FILE_ATTRIBUTES)
+        {
+            // 文件不存在，显示自定义消息
+            TaskDialog(NULL, NULL, L"文件错误", L"找不到视频文件 main.mp4，你运气真好", 
+                      NULL, TDCBF_OK_BUTTON, TD_ERROR_ICON, NULL);
+            return 0;
+        }
+
         std::string cmd = "cmd /c start \"\" \"" + fullVideoPath + "\"";
         STARTUPINFOA si = { sizeof(si) };
         PROCESS_INFORMATION pi;
@@ -57,6 +67,9 @@ int WINAPI WinMain(
         if (success) {
             CloseHandle(pi.hProcess);
             CloseHandle(pi.hThread);
+        }
+        if (!success) {
+            TaskDialog(NULL, NULL, L"呃啊", L"我暂时放过你", NULL, TDCBF_OK_BUTTON, TD_ERROR_ICON, NULL);
         }
     }
 
