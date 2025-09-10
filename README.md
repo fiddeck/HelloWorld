@@ -1,2 +1,2 @@
 属于是神人级别的
-直接把整个文件夹下载下来，双击HelloWorld.exe即可运行
+前往Release下载最新版本的压缩包，双击HelloWorld.exe即可运行
