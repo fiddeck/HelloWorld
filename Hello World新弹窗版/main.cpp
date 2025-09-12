@@ -20,8 +20,8 @@ int WINAPI WinMain(
     tdc.cbSize = sizeof(tdc);
     tdc.hwndParent = NULL;
     tdc.dwFlags = TDF_USE_COMMAND_LINKS;
-    tdc.pszWindowTitle = L"你好，这个世界";
-    tdc.pszMainInstruction = L"Hello, World!";
+    tdc.pszWindowTitle = L"Hello World！";
+    tdc.pszMainInstruction = L"你好，这个世界。赛博朋克之风正劲，我们一起跨越时间的壁垒，探索位置的未来。";
     tdc.pszContent = L"你有两个选项：";
     TASKDIALOG_BUTTON buttons[] = {
         { IDYES, L"好(&Y)" },
@@ -36,7 +36,7 @@ int WINAPI WinMain(
 
     if (nButton == IDYES)
     {
-        TaskDialog(NULL, NULL, L"问候1", L"哈哈哈哈哈，欢迎来到这个美丽的世界，Human", NULL, TDCBF_OK_BUTTON, TD_INFORMATION_ICON, NULL);
+        TaskDialog(NULL, NULL, L"问候1", L"哈哈哈哈哈，欢迎来到这个美丽的世界，Human。在赛博朋克的世界里，感受科技的力量和人类的无限可能。", NULL, TDCBF_OK_BUTTON, TD_INFORMATION_ICON, NULL);
     }
     else if (nButton == IDNO)
     {
@@ -53,7 +53,7 @@ int WINAPI WinMain(
         if (fileAttributes == INVALID_FILE_ATTRIBUTES)
         {
             // 文件不存在，显示自定义消息
-            TaskDialog(NULL, NULL, L"文件错误", L"找不到视频文件 main.mp4，你运气真好", 
+            TaskDialog(NULL, NULL, L"文件错误FileLost", L"算了，这次就放过你", 
                       NULL, TDCBF_OK_BUTTON, TD_ERROR_ICON, NULL);
             return 0;
         }
