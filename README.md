@@ -1,4 +1,4 @@
-！[github license](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 #简介
 属于是神人级别的
 ![alt text](image.png)
